@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-04-17)
+## Unreleased (2026-05-10)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`0f66bf3`](https://github.com/stdlib-js/stdlib/commit/0f66bf3b6d2d5c7a23c47a04bbf7878d79a77a34) - **chore:** modernize examples and benchmarks _(by Athan Reines)_
 -   [`97b509e`](https://github.com/stdlib-js/stdlib/commit/97b509e9e82501c0367c22cab0ef6c98b27618ef) - **docs:** improve doctests for ndarray instances in `blas/ext/base/ndarray/dsorthp` [(#11503)](https://github.com/stdlib-js/stdlib/pull/11503) _(by Prajjwal Bajpai)_
 -   [`328ca77`](https://github.com/stdlib-js/stdlib/commit/328ca7797c1446568242d8bbd510129396fe3af0) - **docs:** fix notes _(by Athan Reines)_
 -   [`df6fbe8`](https://github.com/stdlib-js/stdlib/commit/df6fbe8072b04fc62d2cf41a1f54f68c73acc58f) - **bench:** refactor to use string interpolation in `blas/ext/base` [(#11379)](https://github.com/stdlib-js/stdlib/pull/11379) _(by Karan Anand)_
