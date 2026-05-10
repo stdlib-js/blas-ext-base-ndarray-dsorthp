@@ -41,14 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-ndarray-dsorthp
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import dsorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-dsorthp@esm/index.mjs';
+var dsorthp = require( '@stdlib/blas-ext-base-ndarray-dsorthp' );
 ```
 
 #### dsorthp( arrays )
@@ -56,12 +74,10 @@ import dsorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray
 Sorts a one-dimensional double-precision floating-point ndarray using heapsort.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@esm/index.mjs';
+var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
+var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
 
-var xbuf = new Float64Array( [ 1.0, -2.0, 3.0, -4.0 ] );
-var x = new ndarray( 'float64', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
+var x = new Float64Vector( [ 1.0, -2.0, 3.0, -4.0 ] );
 
 var order = scalar2ndarray( 1.0, {
     'dtype': 'generic'
@@ -73,7 +89,10 @@ var out = dsorthp( [ x, order ] );
 
 The function has the following parameters:
 
--   **arrays**: array-like object containing a one-dimensional input ndarray and a zero-dimensional ndarray specifying the sort order.
+-   **arrays**: array-like object containing the following ndarrays:
+
+    -   a one-dimensional input ndarray.
+    -   a zero-dimensional ndarray specifying the sort order.
 
 </section>
 
@@ -96,23 +115,18 @@ The function has the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
+```javascript
+var discreteUniform = require( '@stdlib/random-discrete-uniform' );
+var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var ndarraylike2scalar = require( '@stdlib/ndarray-base-ndarraylike2scalar' );
+var dsorthp = require( '@stdlib/blas-ext-base-ndarray-dsorthp' );
 
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@esm/index.mjs';
-import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import ndarraylike2scalar from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ndarraylike2scalar@esm/index.mjs';
-import dsorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-dsorthp@esm/index.mjs';
-
-var xbuf = discreteUniform( 10, -100, 100, {
+var opts = {
     'dtype': 'float64'
-});
-var x = new ndarray( 'float64', xbuf, [ xbuf.length ], [ 1 ], 0, 'row-major' );
+};
+
+var x = discreteUniform( [ 10 ], -100, 100, opts );
 console.log( ndarray2array( x ) );
 
 var order = scalar2ndarray( 1.0, {
@@ -122,10 +136,6 @@ console.log( 'Order:', ndarraylike2scalar( order ) );
 
 dsorthp( [ x, order ] );
 console.log( ndarray2array( x ) );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -149,7 +159,7 @@ console.log( ndarray2array( x ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
