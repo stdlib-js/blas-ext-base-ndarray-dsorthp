@@ -43,7 +43,7 @@
     "@stdlib/ndarray-base-numel-dimension": "^0.3.3",
     "@stdlib/ndarray-base-offset": "^0.2.3",
     "@stdlib/ndarray-base-stride": "^0.2.3",
-    "@stdlib/types": "^0.4.3"
+    "@stdlib/types": "^0.5.1"
   },
   "devDependencies": {
     "@stdlib/array-float64": "^0.2.3",
@@ -53,6 +53,7 @@
     "@stdlib/ndarray-data-buffer": "^0.2.3",
     "@stdlib/ndarray-dtype": "^0.2.3",
     "@stdlib/ndarray-from-scalar": "^0.3.1",
+    "@stdlib/ndarray-ndarraylike2scalar": "github:stdlib-js/ndarray-ndarraylike2scalar#main",
     "@stdlib/ndarray-offset": "^0.2.3",
     "@stdlib/ndarray-shape": "^0.2.3",
     "@stdlib/ndarray-strides": "^0.2.3",
