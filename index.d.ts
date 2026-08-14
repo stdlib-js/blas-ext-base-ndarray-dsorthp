@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { typedndarray, float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Sort a one-dimensional double-precision floating-point ndarray using heapsort.
+* Sorts a one-dimensional double-precision floating-point ndarray using heapsort.
 *
-* @module @stdlib/blas-ext-base-ndarray-dsorthp
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional ndarray specifying the sort order.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns input ndarray
 *
 * @example
 * var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var dsorthp = require( '@stdlib/blas-ext-base-ndarray-dsorthp' );
 *
 * var x = new Float64Vector( [ 1.0, -2.0, 3.0, -4.0 ] );
 *
@@ -37,12 +48,9 @@
 * var out = dsorthp( [ x, ord ] );
 * // returns <ndarray>[ -4.0, -2.0, 1.0, 3.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dsorthp( arrays: [ float64ndarray, typedndarray<number> ] ): float64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dsorthp;
